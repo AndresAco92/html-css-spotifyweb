@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 .txt-w{
   color: #fff;
@@ -51,6 +52,48 @@ main .upgrade button{
 
 main .upgrade button:hover{
   font-size: 20px;
+}
+
+/* NAV */
+nav{
+  padding-top: 15px;
+}
+
+nav .logo img{
+  max-width: 150px;
+  padding-left: 15px;
+}
+
+nav .select-menu{
+  padding-top: 16px;
+}
+
+nav ul{
+  list-style: none;
+}
+
+nav ul li{
+  font-size: 13px;
+  font-weight: 400;
+  padding: 5px 15px;
+}
+
+nav ul li img{
+  max-width: 30px;
+  vertical-align: middle;
+}
+
+nav ul li.home{
+  border-left: 2px solid#ADFF2F;
+}
+
+nav ul li:is(.home,.cerca,.libreria):hover{
+  color: #fff ;
+  border: none;
+}
+
+nav ul li:is(.home,.cerca,.libreria):hover:active{
+  border-left: 2px solid#ADFF2F;
 }
 
 /* MENU */

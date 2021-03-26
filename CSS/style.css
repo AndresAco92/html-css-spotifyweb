@@ -8,9 +8,24 @@
 .txt-w{
   color: #fff;
 }
-.txt-g{
-  color: #76787E;
+
+ul>li{
+  opacity: 0.4;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 5px 15px;
 }
+
+ul>li:hover{
+  opacity: 1;
+  cursor: pointer;
+}
+
+ul>li:hover:active{
+  border-left: 2px solid#ADFF2F;
+  opacity: 1;
+}
+
 
 /* MAIN */
 main .main-container{
@@ -18,21 +33,16 @@ main .main-container{
   height: calc(100vh - 80px);
 }
 
+/* MAIN: UPGRADE - NAV - SUB-CONTAINER */
 main .upgrade, .sub-container{
   width: calc(100% - 260px);
 }
 
-nav{
-  float: left;
-  height: 100%;
-  width: 260px;
-  background-color: #000;
-}
-
 /* UPGRADE */
 main .upgrade{
-  position: relative;
-  float: left;
+  position: fixed;
+  top:0;
+  right: 0;
   height: 80px;
   background-color: rgba(0, 0, 0, 0.4);
   text-align: right;
@@ -56,71 +66,99 @@ main .upgrade button:hover{
 
 /* NAV */
 nav{
+  float: left;
+  height: 100%;
+  width: 260px;
   padding-top: 15px;
+  background-color: #000;
 }
 
+nav .container-nav{
+  height: calc(100% - 80px);
+  overflow: hidden;
+}
+
+nav .app{
+  height: 80px;
+  background-color: #fff;
+}
+
+/* LOGO */
 nav .logo img{
   max-width: 150px;
   padding-left: 15px;
 }
 
+nav .logo img:hover{
+  max-width: 155px;
+  cursor: pointer;
+}
+
+/* SELECT-MENU-NAV */
 nav .select-menu{
   padding-top: 16px;
 }
 
-nav ul{
+nav .select-menu ul{
   list-style: none;
 }
 
-nav ul li{
-  font-size: 13px;
-  font-weight: 400;
-  padding: 5px 15px;
-}
-
-nav ul li img{
-  max-width: 30px;
+nav .select-menu ul li img{
+  max-width: 27px;
   vertical-align: middle;
 }
 
-nav ul li.home{
+nav .select-menu ul li.home{
   border-left: 2px solid#ADFF2F;
+  opacity: 1;
 }
 
-nav ul li:is(.home,.cerca,.libreria):hover{
-  color: #fff ;
-  border: none;
+/* PLAYLIST */
+nav .playlist{
+  padding-top: 20px;
 }
 
-nav ul li:is(.home,.cerca,.libreria):hover:active{
-  border-left: 2px solid#ADFF2F;
+nav .playlist h5{
+  margin-left: 16px;
+}
+
+nav .playlist .plus{
+  opacity: 0.4;
+}
+
+nav .playlist .plus span{
+  font-size: 15px;
+}
+
+nav .playlist .fas{
+  padding: 15px 5px 10px 15px;
+}
+
+nav .playlist .fa-plus-square{
+  font-size: 40px;
+  vertical-align: middle;
+}
+
+/* SUB-CONTAINER */
+.sub-container{
+  float: left;
+  height: 100%;
+  padding-top: 80px;
 }
 
 /* MENU */
-.sub-container{
-  height: 100%;
-  overflow-y: auto;
-}
-
-.sub-container ul{
+.sub-container ul.menu{
   list-style: none;
   text-align: center;
   margin-top: 20px;
 }
 
-.sub-container ul li{
+.sub-container ul.menu li{
   display: inline;
-  padding: 20px 10px;
+  padding: 0 10px;
+  width: 10px;
+  font-size: 15px;
 }
-
-.sub-container ul li:hover{
-  color: #fff;
-}
-
-.sub-container ul li:hover:active{
-  border-bottom: 1px solid #ADFF2F;
-}
-
 
 /* FOOTER */
 footer{

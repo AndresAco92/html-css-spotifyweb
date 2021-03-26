@@ -78,11 +78,6 @@ nav .container-nav{
   overflow: hidden;
 }
 
-nav .app{
-  height: 80px;
-  background-color: #fff;
-}
-
 /* LOGO */
 nav .logo img{
   max-width: 150px;
@@ -110,7 +105,11 @@ nav .select-menu ul li img{
 
 nav .select-menu ul li.home{
   border-left: 2px solid#ADFF2F;
-  opacity: 1;
+  opacity: 0.8;
+}
+
+nav .select-menu ul li.home:hover{
+  opacity: 1.2;
 }
 
 /* PLAYLIST */
@@ -126,6 +125,15 @@ nav .playlist .plus{
   opacity: 0.4;
 }
 
+nav .playlist .plus:hover{
+  opacity: 1;
+}
+
+nav .playlist .plus:hover:active{
+  opacity: 1;
+  border-left: 2px solid#ADFF2F;
+}
+
 nav .playlist .plus span{
   font-size: 15px;
 }
@@ -137,6 +145,47 @@ nav .playlist .fas{
 nav .playlist .fa-plus-square{
   font-size: 40px;
   vertical-align: middle;
+}
+
+/* APP AND NAME USER */
+nav .app{
+  height: 80px;
+  padding: 10px 15px;
+}
+
+nav .app .download{
+  opacity: 0.4;
+  padding: 5px 0;
+}
+
+nav .app .download:hover{
+  opacity: 1;
+  cursor: pointer;
+}
+
+nav .app .download img{ 
+  height: 20px;
+  vertical-align: middle;
+  padding-right: 10px;
+}
+
+nav .app .download span{
+  font-size: 12px;
+}
+
+nav .app .user{
+  padding: 10px 15px 10px 5px;
+  border-top: 1px solid #555555;
+  font-weight: 600;
+}
+
+nav .app .user img{
+  height: 23px;
+  background-color: #555555;
+  border-radius: 100%;
+  vertical-align: middle;
+  padding: 2px;
+  margin-right: 10px;
 }
 
 /* SUB-CONTAINER */
@@ -158,6 +207,14 @@ nav .playlist .fa-plus-square{
   padding: 0 10px;
   width: 10px;
   font-size: 15px;
+  border: none;
+}
+
+.sub-container ul.menu li ::after{
+  content: '';
+  display: table;
+  clear: both;
+
 }
 
 /* FOOTER */

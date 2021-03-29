@@ -26,21 +26,29 @@ ul>li:hover:active{
   opacity: 1;
 }
 
-
-/* MAIN */
-main .main-container{
-  background-color: #141922;
-  height: calc(100vh - 80px);
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
-/* MAIN: UPGRADE - NAV - SUB-CONTAINER */
-main .upgrade, .sub-container{
-  width: calc(100% - 260px);
+/* MAIN */
+main{
+  width: 100%;
+  height: calc(100% - 80px);
+  background-color: #141922;
+}
+
+main .main-container{
+  width: 100%;
+  height: 100%;
 }
 
 /* UPGRADE */
 main .upgrade{
+  width: calc(100% - 260px);
   position: fixed;
+  float: left;
   top:0;
   right: 0;
   height: 80px;
@@ -51,7 +59,7 @@ main .upgrade{
 main .upgrade button{
   position: absolute;
   top: 50%;
-  right: 5px;
+  right: 30px;
   transform: translate(0, -50%);
   background-color: rgba(0, 0, 0, 0.4);
   padding: 10px 30px;
@@ -67,15 +75,21 @@ main .upgrade button:hover{
 /* NAV */
 nav{
   float: left;
-  height: 100%;
   width: 260px;
+  height: calc(100vh - 80px);
   padding-top: 15px;
   background-color: #000;
 }
 
-nav .container-nav{
+nav .box{
+  width: 100%;
   height: calc(100% - 80px);
   overflow: hidden;
+}
+
+nav .container-nav{
+  width: 100%;
+  height: auto;
 }
 
 /* LOGO */
@@ -91,6 +105,7 @@ nav .logo img:hover{
 
 /* SELECT-MENU-NAV */
 nav .select-menu{
+  width: 100%;
   padding-top: 16px;
 }
 
@@ -109,11 +124,18 @@ nav .select-menu ul li.home{
 }
 
 nav .select-menu ul li.home:hover{
-  opacity: 1.2;
+  opacity: 1;
 }
 
 /* PLAYLIST */
+nav .container-nav-down{
+  width: 100%;
+  height: 100%;
+}
+
 nav .playlist{
+  height: 70%;
+  width: 100%;
   padding-top: 20px;
 }
 
@@ -145,6 +167,11 @@ nav .playlist .fas{
 nav .playlist .fa-plus-square{
   font-size: 40px;
   vertical-align: middle;
+}
+
+nav .playlist ul{
+  height: 60%;
+  overflow-y: auto;
 }
 
 /* APP AND NAME USER */
@@ -190,9 +217,80 @@ nav .app .user img{
 
 /* SUB-CONTAINER */
 .sub-container{
+  width: calc(100% - 260px);
+  height: calc(100vh - 80px);
   float: left;
-  height: 100%;
-  padding-top: 80px;
+  padding: 80px 20px 20px;
+  overflow-y: auto;
+}
+
+.sub-container .container-albums{
+  width: 100%;
+  margin-top: 10px;
+  height: auto;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.sub-container .cover-box{
+  width: calc(100% / 6);
+  padding: 0 5px;
+  float: left;
+  text-align: center;
+}
+
+.sub-container .cover-recently h1{
+  padding: 20px 5px 5px;
+}
+
+.sub-container .cover-recently.played h1{
+  padding-bottom: 20px;
+}
+
+.sub-container .cover-box .immagine{
+  position: relative;
+}
+
+.sub-container .cover-box img{
+  width: 100%;
+}
+
+.sub-container .cover-box i{
+  position: absolute;
+  font-size: 50px;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.sub-container .cover-box .immagine:hover img{
+  cursor: pointer;
+  opacity: 0.4;
+}
+
+.sub-container .cover-box .immagine:hover i{
+  display: block;
+}
+
+
+.sub-container .cover-recently h4{
+  padding: 20px 0 20px;
+}
+
+.sub-container .cover-recently p{
+  opacity: 0.4;
+  font-size: 14px;
+  margin-bottom: 30px;
+  padding-left: 5px;
+}
+
+.sub-container .cover-recently.different{
+  margin-top: 20px;
+}
+
+.sub-container .cover-recently.different img{
+  border-radius: 100%;
 }
 
 /* MENU */
@@ -210,13 +308,6 @@ nav .app .user img{
   border: none;
 }
 
-.sub-container ul.menu li ::after{
-  content: '';
-  display: table;
-  clear: both;
-
-}
-
 /* FOOTER */
 footer{
   display: flex;
@@ -226,12 +317,14 @@ footer{
   padding: 10px;
 }
 
+/* FOOTER LEFT */
 footer .left{
   padding: 5px;
   display: flex;
   align-items: center;
 }
 
+/* IMMAGINE ALBUM & NOMI */
 footer .left img{
   max-height: 50px;
   margin-right: 10px;
@@ -247,6 +340,7 @@ footer .left .brano{
   opacity: 0.4;
 }
 
+/* LEFT LIKE */
 footer .left .like{
   margin-left: 40px;
 }
@@ -261,13 +355,15 @@ footer .left .like i:hover{
  cursor: pointer;
 }
 
+/* FOOTER CENTER */
 footer .center{
 display: flex;
 flex-direction: column;
-
+align-items: center;
 padding: 5px;
 }
 
+/* ICONE DI RIPRODUZIONE */
 footer .center .icons{
   display: flex;
   align-items: center;
@@ -280,6 +376,7 @@ footer .center .icons i{
 
 footer .center i:hover{
   opacity: 1;
+  cursor: pointer;
 }
 
 footer .center .icons .fa-play-circle{
@@ -287,8 +384,77 @@ footer .center .icons .fa-play-circle{
   opacity: 1;
 }
 
-footer .center .line i{
-  width: 400px;
-  height: 3px;
-  background-color: #878787;
+/* LINEA DI RIPRODUZIONE */
+footer .center .time-line{
+  display: flex;
+  align-items: center;
+  font-size: 10px;
+}
+
+footer .center .line{
+  width: 500px;
+  height: 4px;
+  margin: 10px 30px;
+  background-color:#555555;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+footer .center .line-up{
+  width: 30%;
+  height: 4px;
+  background-color: #C1C1C1;
+}
+
+footer .center .line-up:hover{
+  background-color: #ADFF2F;
+  cursor: pointer;
+}
+
+footer .center .time-line::before{
+  content: '0.30';
+  display: table;
+  clear: both;
+}
+
+footer .center .time-line::after{
+  content: '4.35';
+  display: table;
+  clear: both;
+}
+
+/* FOOTER RIGHT */
+footer .right{
+  display: flex;
+  align-items: center;
+}
+
+footer .right .line{
+  width: 200px;
+  height: 4px;
+  margin-right: 5px;
+  background-color:#555555;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+footer .right .line-up{
+  width: 30%;
+  height: 4px;
+  background-color: #C1C1C1;
+}
+
+footer .right .line-up:hover{
+  background-color: #ADFF2F;
+  cursor: pointer;
+}
+
+footer .right i{
+  padding: 10px;
+  opacity: 0.4;
+}
+
+footer .right i:hover{
+  opacity: 1;
+  cursor: pointer;
 }

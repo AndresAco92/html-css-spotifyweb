@@ -5,6 +5,7 @@
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
 }
+
 .txt-w{
   color: #fff;
 }
@@ -49,6 +50,7 @@ main .upgrade{
   width: calc(100% - 260px);
   position: fixed;
   float: left;
+  z-index: 999;
   top:0;
   right: 0;
   height: 80px;
@@ -230,20 +232,30 @@ nav .app .user img{
   height: auto;
   display: flex;
   flex-flow: column nowrap;
+  overflow: hidden;
 }
 
 .sub-container .cover-box{
   width: calc(100% / 6);
-  padding: 0 5px;
+  padding: 10px 5px;
   float: left;
   text-align: center;
+  overflow: hidden;
+}
+
+.sub-container .cover-recently{
+  width: 100%;
 }
 
 .sub-container .cover-recently h1{
-  padding: 20px 5px 5px;
+  padding: 30px 5px 5px;
 }
 
 .sub-container .cover-recently.played h1{
+  margin-bottom: 20px;
+}
+
+.sub-container .cover-recently .title h1{
   padding-bottom: 20px;
 }
 
@@ -273,7 +285,6 @@ nav .app .user img{
   display: block;
 }
 
-
 .sub-container .cover-recently h4{
   padding: 20px 0 20px;
 }
@@ -281,7 +292,7 @@ nav .app .user img{
 .sub-container .cover-recently p{
   opacity: 0.4;
   font-size: 14px;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   padding-left: 5px;
 }
 
@@ -400,7 +411,7 @@ footer .center .icons i{
 }
 
 footer .center i:hover{
-  opacity: 1;
+  opacity: 15;
   cursor: pointer;
 }
 
@@ -455,7 +466,7 @@ footer .right{
 }
 
 footer .right .line{
-  width: 200px;
+  width: 150px;
   height: 4px;
   margin-right: 5px;
   background-color:#555555;
@@ -483,3 +494,28 @@ footer .right i:hover{
   opacity: 1;
   cursor: pointer;
 }
+
+@media all and (max-width: 1200px){
+  .sub-container .cover-box{
+    width: calc(100% / 4);
+  }
+
+  .sub-container .cover-box:nth-child(1n+6){
+    width: calc(100% / 4);
+    margin-top: 40px;
+  }
+
+  footer .center .line{
+    width: 350px;
+  }
+}
+
+@media all and (max-width: 930px){
+  footer .center .line{
+    width: 200px;
+  }
+  footer .right .line{
+    width: 100px;
+  }
+}
+
